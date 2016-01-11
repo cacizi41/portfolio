@@ -1,1 +1,3 @@
 # portfolio
+SMACSS
+Responsive framework
