@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    
+        <script id="project-template" type="text/x-handlebars-template">
+          <project class="clearfix" data-category="{{category}}">
+              <header>
+                <h1>Project name: {{title}}</h1>
+				<h2>category: {{category}}</h2>
+              </header>
+              <section class="project-body">{{body}}</section>
+              <a href="#" class="read-on">Read more &rarr;</a>
+          </project>
+    </script>
+
+  </head>
+  <body>
+    <header class="site-header clearfix">
+      <section class="heading-group-h1">
+        <h1>WENJING QIANG</h1>
+        <img src="vendor/img1.png" width="200" height="200">
+      </section>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+        <ul>
+        <table width="800" border="0">
+  <tbody>
+    <tr>
+      <td>          <img class="logo" src="vendor/001-home.svg">
+          <a class="tab" data-content="projects" href="#" > Home
+          </a></td>
+      <td><img class="logo" src="vendor/458-linkedin.svg">
+          <a class="tab" data-content="about" href="#" > About
+          </a></td>
+      <td> <img class="logo" src="vendor/407-twitter.svg">
+          <a href="http://twitter.com/brookr" target="_blank" > Twitter</a></td>
+      <td><img class="logo" src="vendor/433-github.svg">
+          <a href="http://github.com/brookr" target="_blank" > GitHub</a></td>
+    </tr>
+  </tbody>
+</table>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <section id="projects" class="tab-content">
+        <div>
+          <ul id="filters">
+            <li>
+              <h3>Project Filter: </h3><select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <section id="about" class="tab-content">
+        <header>
+          Welcome to my Blog
+        </header>
+        <section>
+          <h1>My intrests:</h1>
+          <ul>
+            <li>Hiking</li>
+            <li>Coding</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      &copy;2016 | Wenjing Qiang |
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/project.js"></script>
+    <script src="scripts/projectView.js"></script>
+  </body>
+</html>
