@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <title>Blog</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="vendor/styles/normalize.css">
+    <link rel="stylesheet" href="styles/icons.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+
+        <script id="project-template" type="text/x-handlebars-template">
+          <project class="clearfix" data-category="{{category}}">
+              <header>
+                <h1>Project name: {{title}}</h1>
+				<h2>category: {{category}}</h2>
+              </header>
+              <section class="project-body">{{body}}</section>
+              <a href="#" class="read-on">Read more &rarr;</a>
+          </project>
+    </script>
+
+  </head>
+  <body>
+    <header class="site-header clearfix">
+      <section class="heading-group-h1">
+        <h1>WENJING QIANG</h1>
+        <img src="vendor/img1.png" width="200" height="200">
+      </section>
+      <nav class="main-nav">
+        <div class="icon-menu"></div>
+        <ul>
+        <table width="800" border="0">
+  <tbody>
+    <tr>
+      <td>          <a class="tab" data-content="write" href="#" > Write</a></td>
+      <td>
+          <a class="tab" data-content="projects" href="#" > Preview</a></td>
+    </tr>
+  </tbody>
+</table>
+        </ul>
+      </nav>
+    </header>
+    <main class="clearfix">
+    <section id="write" class="tab-content">
+        <h1>New Project</h1>
+        <form action="#" id="new-form">
+          <label>
+            <input type="text" id="project-title" placeholder="Project title" required>
+          </label>
+          <textarea id="project-body" rows="8" cols="40" required></textarea>
+          <label>
+            <input type="text" id="project-category" placeholder="Project-category" required>
+          </label>
+          <label>
+            <input type="text" id="project-date" placeholder="Project-date" required>
+          </label>
+        </form>
+      </section>
+
+      <section id="project-export">
+        <label id="export-field" for="project-json" class="pull-right">
+          <textarea type="text" rows="20" cols="40" readonly id="project-json"></textarea>
+          When finalized, copy the above JSON, and paste into blogArticles.js
+        </label>
+      </section>
+      <section id="about" class="tab-content">
+        <header>
+          Welcome to my Blog
+        </header>
+        <section>
+          <h1>My intrests:</h1>
+          <ul>
+            <li>Hiking</li>
+            <li>Coding</li>
+          </ul>
+        </section>
+      </section>
+    </main>
+    <footer>
+      &copy;2016 | Wenjing Qiang |
+    </footer>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <script src="scripts/blogArticles.js"></script>
+    <script src="scripts/project.js"></script>
+    <script src="scripts/projectView.js"></script>
+        <script src="scripts/new.js"></script>
+        <script src="scripts/util.js"></script>
+  </body>
+</html>
