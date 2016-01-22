@@ -1,0 +1,25 @@
+[
+  {
+    "category" :     "Art",
+    "title" :        "Is fake art art?",
+    "body" :  "The very first project"
+  },
+
+  {
+    "category" :     "Movie",
+    "title" :        "1000 movies you shouldn't be missing out",
+    "body" :  "Great stuff,enjoy!"
+  }
+
+  {
+    "category" :     "Music",
+    "title" :        "Island top 10 records",
+    "body" :  "Surprise me about your collections."
+  },
+
+  {
+    "category" :     "Book",
+    "title" :        "Dream bookcase",
+    "body" :  "Dreaming on"
+  }
+]

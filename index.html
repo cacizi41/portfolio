@@ -10,17 +10,17 @@
     <link rel="stylesheet" href="style/layout.css">
     <link rel="stylesheet" href="style/modules.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,700,800' rel='stylesheet' type='text/css'>
-  </head>
-        <!-- <script id="project-template" type="text/x-handlebars-template">
-          <project class="clearfix" data-category="{{category}}">
+
+    <script id="project-template" type="text/x-handlebars-template">
+          <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
               <header>
                 <h1>Project name: {{title}}</h1>
-				<h2>category: {{category}}</h2>
               </header>
-              <section class="project-body">{{body}}</section>
-              <a href="#" class="read-on">Read more &rarr;</a>
-          </project>
-    </script> -->
+              <section class="article-body">{{body}}</section>
+              <a href="#" class="read-on">More &rarr;</a>
+          </article>
+    </script>
+ </head>
 
  <body>
  <div id="page-wrap">
@@ -29,13 +29,15 @@
           <h1>
             <p class="name">WENJING Q | QSTUDIO</p>
           </h1>
-          <!-- <div class="icon-menu"></div> -->
-          <img class="burger" src="vendor/190-menu.svg">
         </section>
+
+        <!-- <section>   -->
+          <!-- <img class="icon-menu" src="vendor/190-menu.svg"> -->
+        <!-- </section> -->
       </header>
 
-
       <nav class="main-nav">
+          <div class="icon-menu"></div>
           <ul>
             <li class="tab" data-content="home"><a href="#" class="icon-home"> Home</a></li>
             <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
@@ -44,37 +46,37 @@
           </ul>
       </nav>
 
-    <main>
-      <section id="home" class="tab-content">
-        <p>Projects</p>
-        <ul>
-          <li>coming</li>
-        </ul>
-      </section>
+      <main>
+        <section id="home" class="tab-content">
+          <h2>PortFoLio</h2>
+            <ul>
+                <li>More projects coming!QQQ</li>
+            </ul>
+        </section>
 
-      </section>
-      <section id="about" class="tab-content">
-        <img class="profile" src="vendor/img1.png" >
-        <p>Coming soon!
-        The standard Lorem Ipsum passage, used since the 1500s
-        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
-        </p>
-      </section>
-    </main>
+        <section id="about" class="tab-content">
+          <img class="img1" src="vendor/img1.png" >
+          <p>Coming soon!
+            The standard Lorem Ipsum passage, used since the 1500s
+            "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+          </p>
+        </section>
+      </main>
 
-    <footer>
-      &copy;2016 | Wenjing Qiang |
-    </footer>
+      <footer>
+        &copy;2016 | Wenjing Qiang |
+      </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="scripts/blogArticles.js"></script>
-    <script src="scripts/project.js"></script>
-    <script src="scripts/projectView.js"></script>
+    <script src="vendor/scripts/page.js"></script>
+    <script src="scripts/article.js"></script>
+    <script src="scripts/articleView.js"></script>
     <script src="scripts/githubToken.js"></script>
+    <!-- shoule be in env later -->
     <script src="scripts/repo.js"></script>
     <script src="scripts/repoView.js"></script>
-    <script src="vendor/scripts/page.js"></script>
+    <script src="scripts/webdb.js"></script>
     <script src="scripts/homeController.js"></script>
     <script src="scripts/routes.js"></script>
   </div>
