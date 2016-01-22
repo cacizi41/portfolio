@@ -73,6 +73,9 @@ articleView.exportJSON = function() {
 };
 
 articleView.initIndexPage = function() {
+  Project.all.forEach(function(a) {
+    $('#home').append(a.toHtml());
+  });
   articleView.populateFilters();
   articleView.handleCategoryFilter();
   articleView.handleMainNav();
