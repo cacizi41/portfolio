@@ -11,15 +11,19 @@
     <link rel="stylesheet" href="style/modules.css">
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,700,800' rel='stylesheet' type='text/css'>
 
-    <!-- <script id="project-template" type="text/x-handlebars-template">
-          <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+    <script id="project-template" type="text/x-handlebars-template">
+          <article class="clearfix"  data-category="{{category}}">
               <header>
-                <h1>Project name: {{title}}</h1>
+                <h1>{{title}}</h1>
+                <div class="byline">
+                About <a href=""> {{category}} </a>
+                go live on <time pubdate datetime="2000-01-01">{{date}}</time>
+                </div>
               </header>
-              <section class="article-body">{{body}}</section>
+              <section class="project-body">{{{body}}}</section>
               <a href="#" class="read-on">More &rarr;</a>
           </article>
-    </script> -->
+    </script>
  </head>
 
  <body>
@@ -57,7 +61,7 @@
             </li>
           </ul>
         </div>
-        <article class="template template" data-category="cat">
+        <!-- <article class="template template" data-category="cat">
             <header>
               <h2>Title</h2>
               <div class="byline">
@@ -67,7 +71,7 @@
             </header>
             <div class="project-body"></div>
             <a href='#' class="read-on">Read More &rrarr; </a>
-          </article>
+          </article> -->
         </section>
 
         <section id="about" class="tab-content">
@@ -84,8 +88,10 @@
       </footer>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
-    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
-    <script src="vendor/scripts/page.js"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
+    <!-- <script src="vendor/scripts/page.js"></script>  -->
+    <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/highlight.pack.js"></script>
     <script src="scripts/projectData.js"></script>
     <script src="scripts/article.js"></script>
     <script src="scripts/articleView.js"></script>
