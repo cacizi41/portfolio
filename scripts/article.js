@@ -1,4 +1,4 @@
-var porjects = [];
+var projects = [];
 
 function Project (opts) {
   this.title = opts.title;
@@ -8,24 +8,29 @@ function Project (opts) {
 }
 
 Project.prototype.toHtml = function() {
-  // TODO: Use handlebars to render your articles.
-  //       - Get your template from the DOM.
-  //       - Now "compile" your template with Handlebars.
-  var appTemplate = $('#project-template').html();
-  var compiledTemplate = Handlebars.compile(appTemplate);
+  var $newProject = $('article.template').clone();
+  $newProject.removeClass('template');
+  $newProject.attr('data-category', this.category);
+  $newProject.data('title', this.title);
+  $newProject.data('category', this.category);
+  $newProject.data('body', this.body);
+  $newProject.data('date', this.date);
 
-  // TODO: Use the function that Handlebars gave you to return your filled-in html template for THIS article.
-  return compiledTemplate(this);
-};
+  $newProject.find('h2').html(this.title);
+  $newProject.find('.byline a').html(this.category);
+  $newProject.find('.project-body').html(this.body);
+  $newProject.find('time').html('about ' + parseInt((new Date() - new Date(this.date))/60/60/24/1000) + ' days ago');
+  return $newProject;
+}
 
 rawData.sort(function(a,b) {
   return (new Date(b.date)) - (new Date(a.date));
 });
 
 rawData.forEach(function(ele) {
-  porjects.push(new Project(ele));
+  projects.push(new Project(ele));
 })
 
-porjects.forEach(function(a){
-  $('#projects').append(a.toHtml())
+projects.forEach(function(a){
+  $('#home').append(a.toHtml())
 });
