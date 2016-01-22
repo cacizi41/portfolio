@@ -4,13 +4,14 @@
     <meta charset="UTF-8">
     <title>Blog</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="vendor/styles/normalize.css">
-    <link rel="stylesheet" href="styles/icons.css">
-    <link rel="stylesheet" href="styles/base.css">
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    
-        <script id="project-template" type="text/x-handlebars-template">
+    <link rel="stylesheet" href="vendor/style/normalize.css">
+    <link rel="stylesheet" href="style/icons.css">
+    <link rel="stylesheet" href="style/base.css">
+    <link rel="stylesheet" href="style/layout.css">
+    <link rel="stylesheet" href="style/modules.css">
+    <link href='https://fonts.googleapis.com/css?family=Exo+2:400,700,800' rel='stylesheet' type='text/css'>
+  </head>
+        <!-- <script id="project-template" type="text/x-handlebars-template">
           <project class="clearfix" data-category="{{category}}">
               <header>
                 <h1>Project name: {{title}}</h1>
@@ -19,62 +20,48 @@
               <section class="project-body">{{body}}</section>
               <a href="#" class="read-on">Read more &rarr;</a>
           </project>
-    </script>
+    </script> -->
 
-  </head>
-  <body>
-    <header class="site-header clearfix">
-      <section class="heading-group-h1">
-        <h1>WENJING QIANG</h1>
-        <img src="vendor/img1.png" width="200" height="200">
-      </section>
+ <body>
+ <div id="page-wrap">
+     <header class="site-header clearfix">
+        <section class="heading-group-h1">
+          <h1>
+            <p class="name">WENJING Q | QSTUDIO</p>
+          </h1>
+          <!-- <div class="icon-menu"></div> -->
+          <img class="burger" src="vendor/190-menu.svg">
+        </section>
+      </header>
+
+
       <nav class="main-nav">
-        <div class="icon-menu"></div>
-        <ul>
-        <table width="800" border="0">
-  <tbody>
-    <tr>
-      <td>          <img class="logo" src="vendor/001-home.svg">
-          <a class="tab" data-content="projects" href="#" > Home
-          </a></td>
-      <td><img class="logo" src="vendor/458-linkedin.svg">
-          <a class="tab" data-content="about" href="#" > About
-          </a></td>
-      <td> <img class="logo" src="vendor/407-twitter.svg">
-          <a href="http://twitter.com/brookr" target="_blank" > Twitter</a></td>
-      <td><img class="logo" src="vendor/433-github.svg">
-          <a href="http://github.com/brookr" target="_blank" > GitHub</a></td>
-    </tr>
-  </tbody>
-</table>
-        </ul>
-      </nav>
-    </header>
-    <main>
-      <section id="projects" class="tab-content">
-        <div>
-          <ul id="filters">
-            <li>
-              <h3>Project Filter: </h3><select id="category-filter">
-                <option value="">-- Filter by Categories --</option>
-              </select>
-            </li>
+          <ul>
+            <li class="tab" data-content="home"><a href="#" class="icon-home"> Home</a></li>
+            <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+            <li><a href="http://twitter.com/AUQA" target="_blank" class="icon-twitter3"> Twitter</a></li>
+            <li><a href="http://github.com/cacizi41" target="_blank" class="icon-github"> GitHub</a></li>
           </ul>
-        </div>
+      </nav>
+
+    <main>
+      <section id="home" class="tab-content">
+        <p>Projects</p>
+        <ul>
+          <li>coming</li>
+        </ul>
+      </section>
+
       </section>
       <section id="about" class="tab-content">
-        <header>
-          Welcome to my Blog
-        </header>
-        <section>
-          <h1>My intrests:</h1>
-          <ul>
-            <li>Hiking</li>
-            <li>Coding</li>
-          </ul>
-        </section>
+        <img class="profile" src="vendor/img1.png" >
+        <p>Coming soon!
+        The standard Lorem Ipsum passage, used since the 1500s
+        "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."
+        </p>
       </section>
     </main>
+
     <footer>
       &copy;2016 | Wenjing Qiang |
     </footer>
@@ -84,5 +71,12 @@
     <script src="scripts/blogArticles.js"></script>
     <script src="scripts/project.js"></script>
     <script src="scripts/projectView.js"></script>
+    <script src="scripts/githubToken.js"></script>
+    <script src="scripts/repo.js"></script>
+    <script src="scripts/repoView.js"></script>
+    <script src="vendor/scripts/page.js"></script>
+    <script src="scripts/homeController.js"></script>
+    <script src="scripts/routes.js"></script>
+  </div>
   </body>
 </html>
