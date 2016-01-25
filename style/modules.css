@@ -24,7 +24,7 @@ h2{
 }
 
 .icon-menu {
-  width: 3em;
+  width: 2em;
   float: right;
 }
 
@@ -65,6 +65,10 @@ h2{
 .main-nav ul li: hover {
     color: #ffff00;
 }
+
+/*#home ol{
+  float: left;
+}*/
 
 .img1{
   width: 200px ;

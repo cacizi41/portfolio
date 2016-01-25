@@ -1,80 +1,92 @@
-var projectView = {};
+(function(module){
 
-projectView.populateFilters = function() {
-  $('project').each(function() {
-    if (!$(this).hasClass('template')) {
-      var val = $(this).attr('data-category');
-      optionTag = '<option value="' + val + '">' + val + '</option>';
-      if ($('#category-filter option[value="' + val + '"]').length === 0) {
-        $('#category-filter').append(optionTag);
+  var articleView = {};
+
+  articleView.populateFilters = function() {
+    $('article').each(function() {
+      if (!$(this).hasClass('template')) {
+        val = $(this).attr('data-category');
+        optionTag = '<option value="' + val + '">' + val + '</option>';
+        if ($('#category-filter option[value="' + val + '"]').length === 0) {
+          $('#category-filter').append(optionTag);
+        }
       }
-    }
-  });
-};
+    });
+  };
 
-projectView.handleCategoryFilter = function() {
-  $('#category-filter').on('change', function() {
-    if ($(this).val()) {
-      $('project').hide();
-      $('project[data-category="' + $(this).val() + '"]').fadeIn();
-    } else {
-      $('project').fadeIn();
-      $('project.template').hide();
-    }
-  });
-};
-
-projectView.handleMainNav = function() {
-  $('.main-nav').on('click', '.tab', function(e) {
-    $('.tab-content').hide();
-    $('#' + $(this).data('content')).fadeIn();
-  });
-
-  $('.main-nav .tab:first').click(); // Let's now trigger a click on the first .tab element, to set up the page.
-};
-
-projectView.setTeasers = function() {
-  $('.project-body *:nth-of-type(n+2)').hide(); // Hide elements beyond the first 2 in any artcile body.
-
-  $('#projects').on('click', 'a.read-on', function(e) {
-    e.preventDefault();
-    $(this).parent().find('*').fadeIn();
-    $(this).hide();
-  });
-};
-
-projectView.watchNewForm = function() {
-  $('#new-form').on('change', 'input, textarea', projectView.buildPreview);
-};
+  articleView.watchNewForm = function() {
+    $('#new-form').on('change', 'input, textarea', articleView.buildPreview);
+  };
 
 
-projectView.buildPreview = function() {
-  $('#projects').empty();
+  articleView.buildPreview = function() {
+    $('#home').empty();
 
-  var project = projectView.buildArticle();
-  $('#projects').append(project.toHtml());
+    var project = articleView.buildArticle();
+    $('#home').append(project.toHtml());
 
-  projectView.exportJSON();
-};
+    articleView.exportJSON();
+  };
 
-projectView.buildArticle = function() {
-  return new Project({
-    title: $('#project-title').val(),
-    category: $('#project-category').val(),
-    body: $('#project-body').val(),
-    date: $('#project-date').val()
-  });
-};
+  articleView.buildArticle = function() {
+    return new Project({
+      title: $('#project-title').val(),
+      category: $('#project-category').val(),
+      date: $('#project-date').val(),
+      body: $('#project-body').val()
+    });
+  };
 
-projectView.exportJSON = function() {
-  $('#export-field').show();
-  $('#project-json').val(JSON.stringify(projectView.buildArticle()) + ',');
-};
+  articleView.handleCategoryFilter = function() {
+    $('#category-filter').on('change', function() {
+      if ($(this).val()) {
+        $('article').hide();
+        $('article[data-category="' + $(this).val() + '"]').fadeIn();
+      } else {
+        $('article').fadeIn();
+        $('article.template').hide();
+      }
+      $('#author-filter').val('');
+    });
+  };
 
-$(document).ready(function() {
-  projectView.populateFilters();
-  projectView.handleCategoryFilter();
-  projectView.handleMainNav();
-  projectView.setTeasers();
-projectView.watchNewForm();
-})
+  articleView.handleMainNav = function() {
+    $('.main-nav').on('click', '.tab', function(e) {
+      $('.tab-content').hide();
+      $('#' + $(this).data('content')).fadeIn();
+    });
+
+    $('.main-nav .tab:first').click();
+  };
+
+  articleView.setTeasers = function() {
+    $('.project-body *:nth-of-type(n+2)').hide();
+
+    $('#home').on('click', 'a.read-on', function(e) {
+      e.preventDefault();
+      $(this).parent().find('*').fadeIn();
+      $(this).hide();
+    });
+  };
+
+  articleView.exportJSON = function() {
+    $('#export-field').show();
+    $('#project-json').val(JSON.stringify(articleView.buildArticle()) + ',');
+  };
+
+  articleView.initIndexPage = function() {
+    Project.all.forEach(function(a) {
+      $('#home').append(a.toHtml());
+    });
+    articleView.populateFilters();
+    articleView.handleCategoryFilter();
+    articleView.handleMainNav();
+    articleView.setTeasers();
+  };
+
+  articleView.initNewArticlePage = function() {
+    articleView.watchNewForm();
+  };
+
+  module.articleView = articleView ;
+})(window);

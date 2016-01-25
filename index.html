@@ -12,11 +12,15 @@
     <link href='https://fonts.googleapis.com/css?family=Exo+2:400,700,800' rel='stylesheet' type='text/css'>
 
     <script id="project-template" type="text/x-handlebars-template">
-          <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+          <article class="clearfix"  data-category="{{category}}">
               <header>
-                <h1>Project name: {{title}}</h1>
+                <h1>{{title}}</h1>
+                <div class="byline">
+                About <a href=""> {{category}} </a>
+                go live on <time pubdate datetime="2000-01-01">{{date}}</time>
+                </div>
               </header>
-              <section class="article-body">{{body}}</section>
+              <section class="project-body">{{{body}}}</section>
               <a href="#" class="read-on">More &rarr;</a>
           </article>
     </script>
@@ -37,10 +41,10 @@
       </header>
 
       <nav class="main-nav">
-          <div class="icon-menu"></div>
+          <div class="icon-menu"><img src="vendor/190-menu.svg"></div>
           <ul>
-            <li class="tab" data-content="home"><a href="#" class="icon-home"> Home</a></li>
-            <li class="tab" data-content="about"><a href="#" class="icon-address-book"> About</a></li>
+            <li class="tab" data-content="home"><a href="/" class="icon-home"> Home</a></li>
+            <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
             <li><a href="http://twitter.com/AUQA" target="_blank" class="icon-twitter3"> Twitter</a></li>
             <li><a href="http://github.com/cacizi41" target="_blank" class="icon-github"> GitHub</a></li>
           </ul>
@@ -48,10 +52,28 @@
 
       <main>
         <section id="home" class="tab-content">
-          <h2>PortFoLio</h2>
-            <ul>
-                <li>More projects coming!QQQ</li>
-            </ul>
+        <div>
+          <ul id="filters">
+            <li>
+              <select id="category-filter">
+                <option value="">-- Filter by Categories --</option>
+              </select>
+            </li>
+          </ul>
+          <ol>
+          </ol>
+        </div>
+        <!-- <article class="template template" data-category="cat">
+            <header>
+              <h2>Title</h2>
+              <div class="byline">
+                About <address><a href=""> Category </a></address>
+                go live on <time pubdate datetime="2000-01-01">Publish Time</time>
+              </div>
+            </header>
+            <div class="project-body"></div>
+            <a href='#' class="read-on">Read More &rrarr; </a>
+          </article> -->
         </section>
 
         <section id="about" class="tab-content">
@@ -70,14 +92,21 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/2.0.0/handlebars.js"></script>
     <script src="vendor/scripts/page.js"></script>
-    <script src="scripts/article.js"></script>
-    <script src="scripts/articleView.js"></script>
+    <script src="vendor/scripts/marked.js"></script>
+    <script src="vendor/scripts/highlight.pack.js"></script>
+    <!-- <script src="scripts/projectData.js"></script> -->
+    <!-- <script src="scripts/article.js"></script>
+    <script src="scripts/articleView.js"></script> -->
+    <!-- <script> -->
+      <!-- //  Project.fetchAll(); -->
+    <!-- // </script> -->
     <script src="scripts/githubToken.js"></script>
     <!-- shoule be in env later -->
     <script src="scripts/repo.js"></script>
     <script src="scripts/repoView.js"></script>
-    <script src="scripts/webdb.js"></script>
+    <!-- <script src="scripts/webdb.js"></script> -->
     <script src="scripts/homeController.js"></script>
+    <script src="scripts/aboutController.js"></script>
     <script src="scripts/routes.js"></script>
   </div>
   </body>

@@ -1,0 +1,29 @@
+[
+  {
+    "category" :     "Art",
+    "title" :        "Is fake art art?",
+    "body" :  "The very first project",
+    "date" : "2015-09-05"
+  },
+
+  {
+    "category" :     "Movie",
+    "title" :        "1000 movies you shouldn't be missing out",
+    "body" :  "Great stuff,enjoy!",
+    "date" : "2015-10-05"
+  },
+
+  {
+    "category" :     "Music",
+    "title" :        "Island top 10 records",
+    "body" :  "Surprise me about your collections.",
+    "date" : "2015-11-05"
+  },
+
+  {
+    "category" :     "Book",
+    "title" :        "Dream bookcase",
+    "body" :  "Dreaming on",
+    "date" : "2015-12-05"
+  }
+]
