@@ -8,12 +8,12 @@
       html5sql.logInfo = true;
       html5sql.logErrors = true;
       html5sql.putSelectResultsInArray = true;
-      msg = 'html5sql verbosity on';
+      msg = "html5sql verbosity on";
     } else {
       html5sql.logInfo = false;
       html5sql.logErrors = false;
       html5sql.putSelectResultsInArray = false;
-      msg = 'html5sql verbosity off';
+      msg = "html5sql verbosity off";
     }
     console.log(msg);
   };
@@ -24,12 +24,12 @@
     try {
       if (openDatabase) {
         _config(isVerbose);
-        html5sql.openDatabase('blogDB', 'Blog Database', 5*1024*1024);
+        html5sql.openDatabase("blogDB", "Blog Database", 5*1024*1024);
       } else {
-        console.log('Web Databases not supported.');
+        console.log("Web Databases not supported");
       }
     } catch (e) {
-      console.error('Error occured during DB init. Web Database may not be supported.');
+      console.error("Error occured during DB init. Web Database may not be supported.");
     }
   };
 
@@ -45,7 +45,7 @@
   };
 
   module.webDB = webDB;
-})(window)
+})(window);
 
 // We can go ahead and set up the basic db connection now:
 webDB.init(true);
